@@ -14,7 +14,7 @@ public class Main extends Application {
 		try {
 			AnchorPane	p = new AnchorPane();
 			FXMLLoader loader= new FXMLLoader();
-			loader.setLocation(Main.class.getResource("/view/Main.fxml"));
+			loader.setLocation(Main.class.getResource("/view/AcceuilView.fxml"));
 			p=loader.load();
 			Scene scene = new Scene(p);
 			scene.setFill(Color.TRANSPARENT);

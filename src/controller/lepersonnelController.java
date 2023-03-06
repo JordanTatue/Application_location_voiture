@@ -1,6 +1,9 @@
 package controller;
 
 import com.jfoenix.controls.JFXComboBox;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -9,20 +12,21 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import model.user;
 
 public class lepersonnelController {
 
     @FXML
-    private TableColumn<?, ?> cmailp;
+    private TableColumn<String, String> cmailp;
 
     @FXML
-    private TableColumn<?, ?> cnomp;
+    private TableColumn<String, String> cnomp;
 
     @FXML
-    private TableColumn<?, ?> ctelp;
+    private TableColumn<Integer, Integer> ctelp;
 
     @FXML
-    private TableColumn<?, ?> ctypep;
+    private TableColumn<String, String> ctypep;
 
     @FXML
     private ImageView imp;
@@ -49,10 +53,20 @@ public class lepersonnelController {
     private TextField tftelp;
 
     @FXML
-    private JFXComboBox<?> tftypep;
+    private JFXComboBox<String> tftypep;
 
     @FXML
-    private TableView<?> tvpersonnel;
+    private TableView<user> tvpersonnel;
+    
+    private ObservableList<String> item = FXCollections.observableArrayList();
+    
+    public void initialize() { 	
+    	item.add("admin");
+    	item.add("client");
+    	item.add("gestionnaire");
+    	tftypep.setItems(item);
+    	item.add("");
+    }
 
     @FXML
     void ajouter_personnel(ActionEvent event) {
